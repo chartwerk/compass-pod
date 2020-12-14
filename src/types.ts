@@ -1,7 +1,7 @@
 import { TimeSerie, Options } from '@chartwerk/base';
 
 export type CompassDataParams = {
-  radius: number;
+  radius: number; //it's smth like maxRadius, rename and move it CompassOptions
 }
 export type CompassData = TimeSerie & Partial<CompassDataParams>;
 export type CompassOptions = Options;

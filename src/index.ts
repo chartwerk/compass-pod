@@ -43,6 +43,7 @@ export class ChartwerkCompassPod extends ChartwerkBase<CompassData, CompassOptio
     let gridAxes = this._chartContainer.append('g')
       .attr('class', 'grid-axes axis')
       .selectAll('g')
+      // TODO: move 45 to const or option
       .data(d3.range(0, 360, 45))
       .enter().append('g');
 
@@ -73,6 +74,7 @@ export class ChartwerkCompassPod extends ChartwerkBase<CompassData, CompassOptio
   }
 
   getRadiusScale(serie: CompassData): d3.ScaleLinear<number, number> {
+    // TODO: refactor radius option
     return d3.scaleLinear()
       .domain([0, serie.radius])
       .range([0, this.radiusLength])
